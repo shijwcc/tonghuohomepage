@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>童伙信息</title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+	</style>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
+	<script src="js/jquery.waterwheelCarousel.js"></script>
+	<!--<script src="js/fullPage.js"></script>-->
+	<script>
+        $(function(){
+            $('#dowebok').fullpage({
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                anchors:['oneone', 'twotwo','threethree','fourfour','fivefive','sixsix'],
+                'navigation': true,
+				'slidesNavigation':true,
+				'controlArrows': false,
+                'resize':false,
+				'verticalCentered':false,
+			});
+        });
+
+        /*旋转木马*/
+        $(document).ready(function () {
+            var carousel = $("#carousel").waterwheelCarousel({
+                flankingItems: 3,
+                movingToCenter: function ($item) {
+                    $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+                },
+                movedToCenter: function ($item) {
+                    $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+                },
+                movingFromCenter: function ($item) {
+                    $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+                },
+                movedFromCenter: function ($item) {
+                    $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+                },
+                clickedCenter: function ($item) {
+                    $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+                }
+            });
+
+            $('#prev').bind('click', function () {
+                carousel.prev();
+                return false
+            });
+
+            $('#next').bind('click', function () {
+                carousel.next();
+                return false;
+            });
+
+            // $('#reload').bind('click', function () {
+            //     newOptions = eval("(" + $('#newoptions').val() + ")");
+            //     carousel.reload(newOptions);
+            //     return false;
+            // });
+
+        });
+
+	</script>
+</head>
+
+<body>
+<nav>
+	<img src="images/first/LOGO.png" alt="">
+	<ul class="mynav">
+		<li><a href="">首页</a></li>
+		<li><a href="">推广运营</a></li>
+		<li><a href="">产品及服务</a></li>
+		<li><a href="">案例展示</a></li>
+		<li><a href="">资讯信息</a></li>
+		<li><a href="">关于童伙</a></li>
+	</ul>
+</nav>
+<span class="target"></span>
+
+<div id="dowebok">
+	<div class="section first">
+		<div class="slide"><img src="images/first/banner.png" alt=""></div>
+		<div class="slide"><img src="images/first/banner2.png" alt=""></div>
+		<div class="slide"><img src="images/first/banner3.png" alt=""></div>
+		<div class="imgArr">
+			<img src="images/first/left1.png" alt="">
+			<img src="images/first/left2.png" alt="">
+			<img src="images/first/left3.png" alt="">
+			<img src="images/first/right1.png" alt="">
+			<img src="images/first/right2.png" alt="">
+			<img src="images/first/right3.png" alt="">
+			<img src="images/first/right4.png" alt="">
+		</div>
+	</div>
+	<div class="section second">
+		<div class="slide sectiontwoson">
+			<div class="one">
+				<img src="images/second/img1.png" alt="">
+				<div class="two-right">
+					<img src="images/second/button1.png" alt="">
+					<div>
+						<p class="fz20 title-c">产品及服务</p>
+						<p class="fz20 title-e">Products and services</p>
+						<p class="fz14 text-s">产品服务是指以实物产品为基础的行业，为支持实物产品的销售而向消费者提供的附加服务。如果用产品整体概念来解释，产品服务就是指整体产品中的附加产品、延伸产品部分，也称产品支持服务。其目的是保证消费者所购产品效用的充分发挥。</p>
+					</div>
+					<button class="more-btn">MORE</button>
+				</div>
+			</div>
+		</div>
+		<div class="slide sectiontwoson">
+			<div class="one">
+				<img src="images/second/img2.png" alt="">
+				<div class="two-right">
+					<img src="images/second/button2.png" alt="">
+					<div>
+						<p class="fz20 title-c">推广运营</p>
+						<p class="fz20 title-e">Promoted Operation</p>
+						<p class="fz14 text-s">网络推广方案就是通过研究网络推广的方法，制定出一套适合宣传和推广商品、服务甚至人的方案，而其中的媒介就是通过网络。被推广对象可以是企业、产品、政府以及个人等，推广方案可以是百度推广，谷歌推广，搜狗推广等。广义上讲，企业从开始申请域名、租用空间、网站备案、建立网站、直到网站正式上线开始就算是...</p>
+					</div>
+					<button class="more-btn">MORE</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section third">
+		<div id="third-title">案例展示<br>Case Show</div>
+		<div id="carousel">
+			<img src="images/third/anli1_1.png" id="item-1" />
+			<img src="images/third/anli2_1.png" id="item-2" />
+			<img src="images/third/anli3_1.png" id="item-3" />
+			<img src="images/third/anli1_1.png" id="item-4" />
+			<img src="images/third/anli2_1.png" id="item-5" />
+			<img src="images/third/anli3_1.png" id="item-6" />
+		</div>
+		<!--<a href="#" id="prev">Prev</a> | <a href="#" id="next">Next</a>-->
+	</div>
+
+	<div class="section forth">
+		<div class="father-forth">
+
+			<div class="son-forth-left same-son">
+				<div class="text-title tran">
+					<div class="line-black mar20 tran"></div>
+					<div>ABOUT</div>
+					<div>INDUSTRY</div>
+					<div class="mar10">关于行业</div>
+				</div>
+				<div class="text-body">
+					<p class="fz14">企业的发展和员工个人成长是相辅相成的,也是一种相互依存的关系,没有企业的发展,就不会给员工提供好的发展环境,一个企业给我们提供了资源,提供了方针政策的方向,我们个人在企业方针政策的带领下发挥我们自己的能力.同时,企业要更好的发展,也离不开。</p>
+					<button class="more-btn">MORE</button>
+				</div>
+				<div class="zhezhao-farther tran">
+					<img src="images/forth/hangye1.png" alt="">
+					<div class="zhezhao tran"></div>
+				</div>
+			</div>
+
+			<div class="son-forth-right same-son">
+				<div class="text-title tran">
+					<div class="line-black mar20 tran"></div>
+					<div>ABOUT</div>
+					<div>COMPANY</div>
+					<div class="mar10">关于企业</div>
+				</div>
+				<div class="text-body">
+					<p class="fz14">企业的发展和员工个人成长是相辅相成的,也是一种相互依存的关系,没有企业的发展,就不会给员工提供好的发展环境,一个企业给我们提供了资源,提供了方针政策的方向,我们个人在企业方针政策的带领下发挥我们自己的能力.同时,企业要更好的发展,也离不开。</p>
+					<button class="more-btn">MORE</button>
+				</div>
+				<div class="zhezhao-farther tran">
+					<img src="images/forth/qiye1.png" alt="">
+					<div class="zhezhao tran"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="section">
+		<div class="container-fifth fz20">
+			<p>合作伙伴</p>
+			<p>cooperative partner</p>
+			<div class="container-fifth-son">
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+				<div class="div230-130"></div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section-footer">
+		<div id="footer-text">
+			<div class="foot-header">
+				<div class="foot-border"></div>
+				<div class="foot-about">关于我们<br>ABOUT US</div>
+				<div class="foot-border"></div>
+			</div>
+			<div class="foot-body">
+				<div class="foot-left">
+					<div style="margin-bottom: 20px">About Company</div>
+					<div style="line-height: 2em">企业的发展和员工个人成长是相辅相成的,也是一种相互依存的关系,没有企业的发展,就不会给员工提供好的发展环境,一个企业给我们提供了资源,提供了方针政策的方向,我们个人在企业方针政策的带领下发挥我们自己的能力.同时,企业要更好的发展,也离不开。</div>
+				</div>
+				<div class="foot-center" style="padding-bottom: 0">
+					<div style="margin-bottom: 20px">如有需要？请您留言</div>
+					<form action="">
+						<input type="text" style="width: 50%" placeholder="填写您的姓名">
+						<input type="text" style="width: 50%;margin: 10px 0" placeholder="填写您的电话或者邮箱">
+						<input type="textarea" style="width: 80%;height: 4em" placeholder="请输入留言内容，我们会尽快与您联系">
+					</form>
+					<button class="foot-submit">提交</button>
+				</div>
+				<div class="foot-right">
+					<div>联系电话 : 028-83419527</div>
+					<div style="margin: 28px 0">企业邮箱:123456789@qq.com</div>
+					<div>公司地址：成都市天府广场东御街茂业天地3303</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>
